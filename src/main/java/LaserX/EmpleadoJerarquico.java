@@ -1,4 +1,4 @@
-package modelo;
+package LaserX;
 
 import java.util.ArrayList;
 import java.util.List;

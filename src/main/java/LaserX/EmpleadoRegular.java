@@ -1,4 +1,4 @@
-package modelo;
+package LaserX;
 
 public class EmpleadoRegular implements Empleado {
     private final String nombre;

@@ -1,7 +1,5 @@
 package LaserX;
 
-import modelo.Empleado;
-
 public class LaserX {
 
     private Empleado directorGeneral;
