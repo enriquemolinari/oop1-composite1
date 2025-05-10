@@ -4,23 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmpleadoJerarquico implements Empleado {
-    public static final String ASIGNACION_EMPLEADO_INVALIDA = "No puede agregar como subordinado a este empleado";
     private final String nombre;
     private List<Empleado> empleados;
     private float salario;
-    private Cargo cargo;
 
-    public EmpleadoJerarquico(String nombre, float salario, Cargo cargo) {
+    public EmpleadoJerarquico(String nombre, float salario) {
         this.nombre = nombre;
         this.salario = salario;
-        this.cargo = cargo;
         this.empleados = new ArrayList<>();
     }
 
     public void agregarEmpleado(Empleado empleado) {
-        if (!this.cargo.puedeSerJefeDe(empleado.cargo())) {
-            throw new RuntimeException(ASIGNACION_EMPLEADO_INVALIDA);
-        }
         this.empleados.add(empleado);
     }
 
@@ -31,14 +25,5 @@ public class EmpleadoJerarquico implements Empleado {
             total += m.calcularSalario();
         }
         return total;
-    }
-
-    @Override
-    public Cargo cargo() {
-        return this.cargo;
-    }
-
-    public boolean tieneDeEmpeadoA(Empleado mandoMedio) {
-        return this.empleados.contains(mandoMedio);
     }
 }
