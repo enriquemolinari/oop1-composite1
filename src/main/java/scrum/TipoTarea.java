@@ -1,8 +1,14 @@
 package scrum;
 
-public enum TipoTarea {
-    TAREA_DESARROLLO,
-    SPIKE,
-    HISTORIA_USUARIO,
-    EPICA;
+public interface TipoTarea {
+    boolean puedeContenerA(TipoTarea tipoTarea);
+
+    boolean puedeSerContenidaPorHistoriaDeUsuario();
+
+    boolean puedeSerContenidaPorEpica();
+
+    boolean puedeSerCompleja();
+
+    boolean puedeSerSimple();
 }
+
