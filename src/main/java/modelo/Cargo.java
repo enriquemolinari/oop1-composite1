@@ -8,4 +8,6 @@ public interface Cargo {
     boolean puedeSerSubordinadoDeMandoMedio();
 
     boolean puedeSerSubordinadorDeJunior();
+
+    boolean puedeSerJerarquico();
 }

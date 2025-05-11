@@ -20,4 +20,9 @@ public class MandoMedio implements Cargo {
     public boolean puedeSerSubordinadorDeJunior() {
         return false;
     }
+
+    @Override
+    public boolean puedeSerJerarquico() {
+        return true;
+    }
 }

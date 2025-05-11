@@ -21,4 +21,9 @@ public class Junior implements Cargo {
     public boolean puedeSerSubordinadorDeJunior() {
         return false;
     }
+
+    @Override
+    public boolean puedeSerJerarquico() {
+        return false;
+    }
 }
