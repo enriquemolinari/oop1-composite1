@@ -56,5 +56,6 @@ public class EmpleadoTest {
         var empleadoRegular = new EmpleadoRegular("empleadoRegular", 100);
         mandoMedio.agregarEmpleado(empleadoRegular);
         assertTrue(mandoMedio.tieneDeEmpeadoA(empleadoRegular));
+        
     }
 }
