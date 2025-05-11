@@ -1,4 +1,4 @@
-package modelo;
+package laserx;
 
 public class EmpleadoTest {
 

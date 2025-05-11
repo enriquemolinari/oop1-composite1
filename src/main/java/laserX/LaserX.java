@@ -1,4 +1,4 @@
-package LaserX;
+package laserX;
 
 public class LaserX {
 

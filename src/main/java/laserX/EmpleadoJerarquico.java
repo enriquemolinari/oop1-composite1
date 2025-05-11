@@ -1,4 +1,4 @@
-package LaserX;
+package laserX;
 
 import java.util.ArrayList;
 import java.util.List;
