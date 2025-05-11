@@ -1,6 +1,4 @@
-package LaserX;
-
-import modelo.Empleado;
+package laserX;
 
 public class LaserX {
 

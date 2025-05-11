@@ -1,4 +1,4 @@
-package modelo;
+package laserX;
 
 public class Director implements Cargo {
 

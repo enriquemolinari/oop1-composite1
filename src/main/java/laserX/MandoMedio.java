@@ -1,4 +1,4 @@
-package modelo;
+package laserX;
 
 public class MandoMedio implements Cargo {
     @Override

@@ -1,4 +1,4 @@
-package modelo;
+package laserX;
 
 public interface Cargo {
     boolean puedeSerJefeDe(Cargo cargo);
