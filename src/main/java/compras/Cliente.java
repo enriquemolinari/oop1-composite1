@@ -1,26 +1,19 @@
 package compras;
 
-import java.util.List;
-
 public class Cliente {
-    private List<Producto> compra;
     private String nombre;
-    private TipoCliente tipo;
+    private Categoria categoria;
 
-    public Cliente(String nombre, TipoCliente tipo) {
+    public Cliente(String nombre, Categoria categoria) {
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.categoria = categoria;
     }
 
-    public void agregarProducto(Producto producto) {
-        this.compra.add(producto);
+    public float impuestoParaServicioDigital(float precio) {
+        return categoria.impuestoServicioDigital(precio);
     }
 
-    public TipoCliente tipo() {
-        return tipo;
-    }
-
-    public List<Producto> compra() {
-        return List.copyOf(compra);
+    public float costoEnvioProductoFisico(float costo) {
+        return categoria.costoEnvioProductoFisico(costo);
     }
 }

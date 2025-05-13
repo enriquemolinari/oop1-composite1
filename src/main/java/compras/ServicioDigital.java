@@ -1,9 +1,9 @@
 package compras;
 
 public class ServicioDigital implements Producto {
-    private float precio;
-    private String nombre;
-    private float iva;
+    private final float precio;
+    private final String nombre;
+    private final float iva;
 
     public ServicioDigital(String nombre, float precio, float iva) {
         this.precio = precio;
@@ -17,15 +17,12 @@ public class ServicioDigital implements Producto {
     }
 
     @Override
-    public float costoEnvio(TipoCliente tipo) {
+    public float costoEnvio(Cliente cliente) {
         return 0;
     }
 
     @Override
-    public float impuesto(TipoCliente tipo) {
-        if (tipo.equals(TipoCliente.REGULAR)) {
-            return this.precio * 0.10f;
-        }
-        return 0;
+    public float impuesto(Cliente cliente) {
+        return cliente.impuestoParaServicioDigital(this.precio);
     }
 }

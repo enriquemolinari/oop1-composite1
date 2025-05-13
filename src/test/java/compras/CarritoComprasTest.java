@@ -8,7 +8,7 @@ public class CarritoComprasTest {
 
     @Test
     public void testClienteRegular() {
-        var cliente = new Cliente("Jose", TipoCliente.REGULAR);
+        var cliente = new Cliente("Jose", new Regular());
         var producto1 = new ServicioDigital("Hosting", 100, 0.10f);
         var producto2 = new ProductoFisico("Libro", 100, 15);
         var carrito = new CarritoCompras(cliente);
@@ -19,7 +19,7 @@ public class CarritoComprasTest {
 
     @Test
     public void testClienteCorportivo() {
-        var cliente = new Cliente("Jose", TipoCliente.CORPORATIVO);
+        var cliente = new Cliente("Jose", new Corporativo());
         var producto1 = new ServicioDigital("Hosting", 100, 0.10f);
         var producto2 = new ProductoFisico("Libro", 100, 15);
         var carrito = new CarritoCompras(cliente);
