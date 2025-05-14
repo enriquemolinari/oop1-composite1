@@ -1,6 +1,6 @@
 package compras;
 
-public class Regular implements Categoria {
+public class Regular implements CalculoCostosCategoriaVisitor {
     private float impuestos;
     private float costoEnvio;
 

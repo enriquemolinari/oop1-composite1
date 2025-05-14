@@ -1,11 +1,7 @@
 package compras;
 
-public interface Categoria {
+public interface CategoriaVisitor {
     void visit(ProductoFisico productoFisico);
 
     void visit(ServicioDigital servicioDigital);
-
-    float impuestos();
-
-    float envio();
 }

@@ -1,6 +1,6 @@
 package compras;
 
-public class Corporativo implements Categoria {
+public class Corporativo implements CalculoCostosCategoriaVisitor {
     private float impuestos;
     private float costoEnvio;
 

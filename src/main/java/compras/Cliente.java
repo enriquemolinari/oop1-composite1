@@ -2,26 +2,26 @@ package compras;
 
 public class Cliente {
     private String nombre;
-    private Categoria categoria;
+    private CalculoCostosCategoriaVisitor categoriaVisitor;
 
-    public Cliente(String nombre, Categoria categoria) {
+    public Cliente(String nombre, CalculoCostosCategoriaVisitor categoriaVisitor) {
         this.nombre = nombre;
-        this.categoria = categoria;
+        this.categoriaVisitor = categoriaVisitor;
     }
-    
+
     public void visit(ProductoFisico productoFisico) {
-        this.categoria.visit(productoFisico);
+        this.categoriaVisitor.visit(productoFisico);
     }
 
     public void visit(ServicioDigital servicioDigital) {
-        this.categoria.visit(servicioDigital);
+        this.categoriaVisitor.visit(servicioDigital);
     }
 
     float totalImpuesto() {
-        return categoria.impuestos();
+        return categoriaVisitor.impuestos();
     }
 
     float totalEnvio() {
-        return categoria.envio();
+        return categoriaVisitor.envio();
     }
 }
