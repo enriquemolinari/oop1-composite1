@@ -19,10 +19,8 @@ public class CarritoCompras {
     public float calcularPrecio() {
         float total = 0;
         for (Producto producto : productos) {
-            total += producto.precio();
-            total += producto.impuesto(cliente);
-            total += producto.costoEnvio(cliente);
+            producto.accept(cliente);
         }
-        return total;
+        return cliente.totalEnvio() + cliente.totalImpuesto();
     }
 }

@@ -1,7 +1,11 @@
 package compras;
 
 public interface Categoria {
-    float impuestoServicioDigital(float precio);
+    void visit(ProductoFisico productoFisico);
 
-    float costoEnvioProductoFisico(float costo);
+    void visit(ServicioDigital servicioDigital);
+
+    float impuestos();
+
+    float envio();
 }

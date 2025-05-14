@@ -8,12 +8,20 @@ public class Cliente {
         this.nombre = nombre;
         this.categoria = categoria;
     }
-
-    public float impuestoParaServicioDigital(float precio) {
-        return categoria.impuestoServicioDigital(precio);
+    
+    public void visit(ProductoFisico productoFisico) {
+        this.categoria.visit(productoFisico);
     }
 
-    public float costoEnvioProductoFisico(float costo) {
-        return categoria.costoEnvioProductoFisico(costo);
+    public void visit(ServicioDigital servicioDigital) {
+        this.categoria.visit(servicioDigital);
+    }
+
+    float totalImpuesto() {
+        return categoria.impuestos();
+    }
+
+    float totalEnvio() {
+        return categoria.envio();
     }
 }

@@ -1,13 +1,28 @@
 package compras;
 
 public class Regular implements Categoria {
+    private float impuestos;
+    private float costoEnvio;
+
     @Override
-    public float impuestoServicioDigital(float precio) {
-        return precio * 0.10f;
+    public void visit(ProductoFisico productoFisico) {
+        this.impuestos += productoFisico.precio() + (productoFisico.precio() * productoFisico.iva());
+        this.costoEnvio += productoFisico.precio() * productoFisico.peso();
     }
 
     @Override
-    public float costoEnvioProductoFisico(float costo) {
-        return costo;
+    public void visit(ServicioDigital servicioDigital) {
+        this.impuestos += servicioDigital.precio() + (servicioDigital.precio() * 0.10f);
+        this.costoEnvio += 0;
+    }
+
+    @Override
+    public float impuestos() {
+        return this.impuestos;
+    }
+
+    @Override
+    public float envio() {
+        return this.costoEnvio;
     }
 }

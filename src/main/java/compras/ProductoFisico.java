@@ -13,18 +13,20 @@ public class ProductoFisico implements Producto {
         this.iva = 0.21f;
     }
 
-    @Override
     public float precio() {
         return precio;
     }
 
-    @Override
-    public float costoEnvio(Cliente cliente) {
-        return cliente.costoEnvioProductoFisico(this.precio * peso);
+    public int peso() {
+        return this.peso;
     }
 
+    public float iva() {
+        return iva;
+    }
+    
     @Override
-    public float impuesto(Cliente cliente) {
-        return this.precio * iva;
+    public void accept(Cliente cliente) {
+        cliente.visit(this);
     }
 }

@@ -11,18 +11,12 @@ public class ServicioDigital implements Producto {
         this.iva = iva;
     }
 
-    @Override
     public float precio() {
         return this.precio;
     }
 
     @Override
-    public float costoEnvio(Cliente cliente) {
-        return 0;
-    }
-
-    @Override
-    public float impuesto(Cliente cliente) {
-        return cliente.impuestoParaServicioDigital(this.precio);
+    public void accept(Cliente cliente) {
+        cliente.visit(this);
     }
 }
