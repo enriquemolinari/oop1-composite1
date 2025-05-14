@@ -17,7 +17,6 @@ public class CarritoCompras {
     }
 
     public float calcularPrecio() {
-        float total = 0;
         for (Producto producto : productos) {
             producto.accept(cliente);
         }
